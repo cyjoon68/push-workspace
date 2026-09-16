@@ -3,13 +3,12 @@
 ## 저장소
 
 ```sh
-git clone --recurse-submodules https://github.com/push-dot/push-workspace.git
+git clone https://github.com/push-dot/push-workspace.git
 cd push-workspace
 git switch develop
-git submodule update --init --recursive
 ```
 
-세 저장소는 비공개다. 작업자에게 각 저장소 읽기 권한이 필요하다. workspace는 검증한 커밋을 고정한다. 일상 체크아웃에서 `git submodule update --remote`로 검증되지 않은 최신 커밋을 자동으로 가져오지 않는다.
+저장소는 비공개다. 앱과 API 코드는 `push-fe`, `push-be`에 모노레포로 함께 들어 있다.
 
 ## Hostinger VPS
 
@@ -20,7 +19,7 @@ Docker Engine과 Compose, 도메인 A/AAAA 레코드, 80/443 인바운드 포트
 3. `POSTGRES_PASSWORD`는 URL 예약 문자가 없는 충분히 긴 무작위 값으로 설정한다. `AES_KEY`는 32바이트 키의 base64 값이다. `push-be/.env.example`의 OAuth·AI·결제 설정을 추가한다.
 4. `docker compose config --quiet`로 구성을 검증하고 `docker compose up --build -d`를 실행한다.
 5. 서버 README의 health endpoint와 인증 거부, OAuth 왕복, 실제 DB 보존을 확인한 후 사용자 접근을 연다.
-6. 배포 전 DB 백업을 만들고 복원 테스트를 별도 DB에서 실행한다. 복구 시 workspace와 두 gitlink를 같은 릴리스 버전으로 되돌린다. 하위 호환이 아닌 스키마 변경은 DB 복구 계획까지 있어야 한다.
+6. 배포 전 DB 백업을 만들고 복원 테스트를 별도 DB에서 실행한다. 복구 시 workspace를 같은 릴리스 커밋으로 되돌린다. 하위 호환이 아닌 스키마 변경은 DB 복구 계획까지 있어야 한다.
 
 Caddy는 도메인 인증서를 발급하고 TLS를 종료한다. API 로그에는 요청 본문·Authorization·메일·이력서·키를 남기지 않는다. 배포·서버 측 `.env`와 DB 백업은 git에 포함하지 않는다.
 

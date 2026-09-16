@@ -6,3 +6,4 @@
 .artifacts/
 output/
 .playwright-cli/
+push-be/server

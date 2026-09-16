@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Push — Design Tokens</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+body { margin: 0; padding: 48px; }
+h1 { margin: 0 0 8px; }
+.sub { color: var(--color-text-muted); margin: 0 0 40px; }
+h2 { margin: 40px 0 16px; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.swatch { border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; }
+.swatch .chip { height: 64px; }
+.swatch .meta { padding: 10px 12px; }
+.swatch .name { font-weight: 600; font-size: 13px; }
+.swatch .hex { color: var(--color-text-muted); font-size: 12px; }
+.type-row { padding: 10px 0; border-bottom: 1px solid var(--color-border); display: flex; align-items: baseline; gap: 16px; }
+.type-row .tag { width: 100px; flex: none; color: var(--color-text-muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<h1 class="t-h1">Push Design Tokens</h1>
+<p class="t-body sub">design-rules.md §A · confirmed 2026-03-18 · 데스크톱 1440×900</p>
+
+<h2 class="t-h2">색</h2>
+<div class="swatches">
+<div class="swatch"><div class="chip" style="background:var(--color-bg);border-bottom:1px solid var(--color-border)"></div><div class="meta"><div class="name">bg</div><div class="hex">#FFFFFF</div></div></div>
+<div class="swatch"><div class="chip" style="background:var(--color-surface-1)"></div><div class="meta"><div class="name">surface-1</div><div class="hex">#F5F5F7</div></div></div>
+<div class="swatch"><div class="chip" style="background:var(--color-surface-2)"></div><div class="meta"><div class="name">surface-2</div><div class="hex">#E9E9EE</div></div></div>
+<div class="swatch"><div class="chip" style="background:var(--color-text)"></div><div class="meta"><div class="name">text</div><div class="hex">#111827</div></div></div>
+<div class="swatch"><div class="chip" style="background:var(--color-text-muted)"></div><div class="meta"><div class="name">text-muted</div><div class="hex">#6B7280</div></div></div>
+<div class="swatch"><div class="chip" style="background:var(--color-border)"></div><div class="meta"><div class="name">border</div><div class="hex">#E5E7EB</div></div></div>
+<div class="swatch"><div class="chip" style="background:var(--color-accent)"></div><div class="meta"><div class="name">accent</div><div class="hex">#2563EB</div></div></div>
+<div class="swatch"><div class="chip" style="background:var(--color-accent-pressed)"></div><div class="meta"><div class="name">accent-pressed</div><div class="hex">#1D4ED8</div></div></div>
+<div class="swatch"><div class="chip" style="background:var(--color-accent-soft)"></div><div class="meta"><div class="name">accent-soft</div><div class="hex">rgba(37,99,235,.10)</div></div></div>
+<div class="swatch"><div class="chip" style="background:var(--color-danger)"></div><div class="meta"><div class="name">danger</div><div class="hex">#DC2626</div></div></div>
+<div class="swatch"><div class="chip" style="background:var(--color-success)"></div><div class="meta"><div class="name">success</div><div class="hex">#166534</div></div></div>
+<div class="swatch"><div class="chip" style="background:var(--color-warn)"></div><div class="meta"><div class="name">warn</div><div class="hex">#B45309</div></div></div>
+</div>
+
+<h2 class="t-h2">타이포</h2>
+<div class="type-row"><span class="tag">display 28/700</span><span class="t-display">Push 명령창</span></div>
+<div class="type-row"><span class="tag">h1 24/600</span><span class="t-h1">화면 제목</span></div>
+<div class="type-row"><span class="tag">h2 20/600</span><span class="t-h2">섹션 제목</span></div>
+<div class="type-row"><span class="tag">h3 17/600</span><span class="t-h3">카드 제목</span></div>
+<div class="type-row"><span class="tag">body 15/400</span><span class="t-body">본문 — 채팅 메시지와 문서 본문에 사용한다.</span></div>
+<div class="type-row"><span class="tag">body-sm 14/400</span><span class="t-body-sm">보조 본문 — 목록·폼 설명.</span></div>
+<div class="type-row"><span class="tag">caption 12/400</span><span class="t-caption">캡션 · 타임스탬프 · 보조 정보</span></div>
+<div class="type-row"><span class="tag">label 13/500</span><span class="t-label">라벨 · 칩 · 상태 표시</span></div>
+
+<h2 class="t-h2">화면 (12)</h2>
+<ul class="t-body">
+<li><a href="screens/login-default.html">로그인</a></li>
+<li><a href="screens/home-default.html">홈(명령창)</a></li>
+<li><a href="screens/chat-default.html">회사별 채팅</a></li>
+<li><a href="screens/documents-default.html">내 서류</a></li>
+<li><a href="screens/doc-editor-default.html">문서 편집</a></li>
+<li><a href="screens/applications-default.html">지원 관리</a></li>
+<li><a href="screens/job-detail-default.html">공고 상세</a></li>
+<li><a href="screens/vault-default.html">커리어 볼트</a></li>
+<li><a href="screens/project-chat-default.html">프로젝트 채팅</a></li>
+<li><a href="screens/interview-default.html">면접</a></li>
+<li><a href="screens/calendar-default.html">캘린더</a></li>
+<li><a href="screens/settings-default.html">설정</a></li>
+</ul>
+</body>
+</html>

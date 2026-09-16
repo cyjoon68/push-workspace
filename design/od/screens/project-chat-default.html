@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Push — project-chat-default</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+</head>
+<body>
+<main class="screen">
+<aside class="sidebar">
+<div class="sidebar-head"><span class="t-label">Push</span><button class="icon-button"><svg class="icon" data-icon="panel-left-close" width="20" height="20"><use href="../icons.svg#i-panel-left-close"/></svg></button></div>
+<div class="sidebar-section"><div class="sidebar-label">채팅</div>
+<button class="sidebar-item"><svg class="icon" data-icon="square-pen" width="20" height="20"><use href="../icons.svg#i-square-pen"/></svg><span class="sidebar-item-label">새 채팅</span></button><button class="sidebar-item"><span class="sidebar-dot is-on"></span><span class="sidebar-item-label">삼성전자</span></button><button class="sidebar-item"><span class="sidebar-item-label">네이버</span></button><button class="sidebar-item is-active"><span class="sidebar-dot is-busy"></span><span class="sidebar-item-label">Kafka 파이프라인</span><span class="sidebar-tag">프로젝트</span></button></div>
+<div class="sidebar-section"><div class="sidebar-label">기능</div>
+<button class="sidebar-item"><svg class="icon" data-icon="file-text" width="20" height="20"><use href="../icons.svg#i-file-text"/></svg><span class="sidebar-item-label">내 서류</span></button><button class="sidebar-item"><svg class="icon" data-icon="briefcase" width="20" height="20"><use href="../icons.svg#i-briefcase"/></svg><span class="sidebar-item-label">지원 관리</span></button><button class="sidebar-item"><svg class="icon" data-icon="archive" width="20" height="20"><use href="../icons.svg#i-archive"/></svg><span class="sidebar-item-label">커리어 볼트</span></button><button class="sidebar-item"><svg class="icon" data-icon="mic" width="20" height="20"><use href="../icons.svg#i-mic"/></svg><span class="sidebar-item-label">면접</span></button><button class="sidebar-item"><svg class="icon" data-icon="calendar" width="20" height="20"><use href="../icons.svg#i-calendar"/></svg><span class="sidebar-item-label">캘린더</span></button></div>
+<div class="sidebar-foot"><button class="sidebar-item"><svg class="icon" data-icon="settings" width="20" height="20"><use href="../icons.svg#i-settings"/></svg><span class="sidebar-item-label">설정</span></button></div>
+</aside><div class="canvas"><div class="canvas-header"><h1 class="canvas-header-title">Kafka 파이프라인</h1><div class="canvas-header-actions"><span class="status-chip status-chip-ready">프로젝트</span></div></div><div class="chat-stream">
+<div class="chat-stream-msg chat-stream-msg-ai">블루프린트를 작성했어요. Kafka 수집 → Spark 변환 → 적재 3단계입니다.</div>
+<div class="card"><div class="card-title">블루프린트 — kafka-pipeline</div>
+<div class="card-meta">producer.py · consumer.py · docker-compose.yml · README</div></div>
+<div class="chat-stream-msg chat-stream-msg-user">실행 계획 보여줘</div>
+<div class="approval-card">
+<div class="approval-card-title">CLI 실행 승인</div>
+<div class="approval-card-cmd">$ npm run test -- --coverage
+디렉터리: ~/projects/kafka-pipeline</div>
+<div class="approval-card-body">프로젝트 검증을 위해 테스트를 실행합니다.</div>
+<div class="approval-card-actions">
+<button class="button button-secondary button-sm"><svg class="icon" data-icon="x" width="20" height="20"><use href="../icons.svg#i-x"/></svg> 거부</button>
+<button class="button button-primary button-sm"><svg class="icon" data-icon="check" width="20" height="20"><use href="../icons.svg#i-check"/></svg> 승인</button>
+</div></div>
+<div class="card"><div class="card-title">실행 상태</div>
+<span class="status-chip status-chip-running"><svg class="icon" data-icon="loader-circle" width="16" height="16"><use href="../icons.svg#i-loader-circle"/></svg> RUNNING</span>
+<div class="card-meta">npm run test · 12초 경과</div></div>
+<div class="card"><div class="card-title">검증 결과</div>
+<span class="status-chip status-chip-verified"><svg class="icon" data-icon="badge-check" width="16" height="16"><use href="../icons.svg#i-badge-check"/></svg> VERIFIED</span>
+<div class="card-meta">테스트 42/42 통과 · 커버리지 81%</div></div>
+</div><div class="composer">
+<button class="icon-button"><svg class="icon" data-icon="paperclip" width="20" height="20"><use href="../icons.svg#i-paperclip"/></svg></button>
+<button class="icon-button"><svg class="icon" data-icon="sliders-horizontal" width="20" height="20"><use href="../icons.svg#i-sliders-horizontal"/></svg></button>
+<input class="composer-field" placeholder="메시지 입력 — UltraResume 등 추론 설정은 슬라이더 아이콘에서">
+<button class="icon-button"><svg class="icon" data-icon="send-horizontal" width="16" height="16"><use href="../icons.svg#i-send-horizontal"/></svg></button>
+</div></div>
+</main>
+</body>
+</html>

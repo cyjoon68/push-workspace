@@ -1,0 +1,308 @@
+<meta charset="utf-8"><title>1단계 구조</title>
+<style>
+:root{color-scheme:light only;
+  --bg:#F7F8FA;--card:#FFFFFF;--line:#E5E7EB;--ink:#1F2937;--sub:#6B7280;--soft:#EEF0F3;
+  --acc:#2F6BFF;--acc-d:#1F4ED8}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--ink);font:14px/1.5 "Pretendard",-apple-system,"Apple SD Gothic Neo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+.wrap{max-width:1200px;margin:0 auto;padding:20px 24px 72px}
+h1{font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
+h2{font-size:17px;margin:0 0 4px}
+h2 small{font-weight:500;color:var(--sub);font-size:13px;margin-left:8px}
+.sub{color:var(--sub);margin:0 0 24px}
+.counter{display:inline-block;font-size:13px;font-weight:600;color:var(--acc);background:#EEF3FF;border-radius:14px;padding:3px 12px;vertical-align:4px;margin-left:8px}
+.fb-warn{font-size:12px;color:var(--sub);background:var(--soft);border-radius:8px;padding:6px 10px;margin-bottom:16px;display:inline-block}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);padding:8px 16px;border-radius:18px;background:var(--ink);color:#fff;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:50}
+.toast.show{opacity:1}
+
+section[data-unit]{display:grid;grid-template-columns:132px minmax(0,1fr);gap:24px;align-items:start;margin-bottom:48px}
+.strip{position:sticky;top:12px;display:flex;flex-direction:column;gap:10px;width:132px}
+.strip .ax{display:flex;align-items:center;gap:8px;height:40px;padding:0 10px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden}
+.strip .ax b{flex:none;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;display:inline-flex;align-items:center;justify-content:center}
+.strip .ax span{overflow:hidden;text-overflow:ellipsis}
+.save{font:inherit;font-weight:700;font-size:14px;height:40px;width:132px;padding:0;border-radius:10px;border:0;background:var(--acc);color:#fff;cursor:pointer}
+.save:disabled{opacity:.5;cursor:default}
+.save:focus-visible,.opt:focus-visible,.rowchk:focus-visible,textarea:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.strip .saved{font-size:12px;font-weight:600;color:#166534;text-align:center;min-height:18px}
+.strip .go{height:auto;min-height:40px;padding:8px 6px;line-height:1.3;white-space:normal}
+.strip .alt{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.strip .alt.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.strip .save[hidden]{display:none}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{font-size:12px;font-weight:700;color:var(--sub);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:10px;border-bottom:1px solid var(--soft);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.name{font-weight:700;white-space:nowrap}
+td.cta{color:var(--acc);font-weight:600}
+td.rm{width:120px;text-align:right}
+td.rm label{font-size:12px;color:var(--sub);cursor:pointer;display:inline-flex;align-items:center;gap:4px}
+tr.off td{opacity:.4;text-decoration:line-through}
+tr.off td.rm{opacity:1;text-decoration:none}
+.fixed{margin-top:14px;font-size:13px;color:var(--sub)}
+.fixed b{color:var(--ink)}
+.fixed span{display:inline-block;margin:2px 10px 2px 0}
+
+.q{padding:14px 0;border-bottom:1px solid var(--soft)}
+.q:last-of-type{border-bottom:0}
+.q .qt{font-weight:700;margin-bottom:4px}
+.q .why{font-size:12px;color:var(--sub);margin:0 0 10px}
+.q .why b{color:#166534}
+.opts{display:flex;flex-wrap:wrap;gap:6px}
+.opt{font:inherit;font-size:14px;font-weight:600;height:40px;padding:0 14px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;position:relative}
+.opt.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.opt.reco::after{content:"추천";position:absolute;top:-9px;right:8px;font-size:10px;font-weight:700;padding:1px 6px;border-radius:8px;background:#166534;color:#fff}
+.opt.on.reco::after{background:#22C55E}
+.q[data-locked] .opt{pointer-events:none}
+.q[data-locked] .opt:not(.on){opacity:.45}
+
+.fb{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.fb .eyebrow{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--sub);text-transform:uppercase;margin-bottom:10px}
+textarea{width:100%;font:inherit;font-size:14px;line-height:1.5;padding:10px 12px;border:1px solid var(--line);border-radius:10px;resize:vertical;color:var(--ink);background:#fff;min-height:72px}
+textarea::placeholder{color:#9CA3AF}
+.overall{display:grid;grid-template-columns:132px minmax(0,1fr);gap:24px;align-items:start;margin-top:8px}
+.overall .fb{margin-top:0}
+.foot{margin-top:40px;font-size:12px;color:var(--sub);text-align:center}
+@media (max-width:900px){section[data-unit],.overall{grid-template-columns:1fr}.strip{position:static;flex-direction:row;flex-wrap:wrap;width:auto;align-items:center}.strip .saved{margin-left:auto}}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+</style>
+
+<div class="wrap">
+<h1>1단계 구조 <span class="counter" id="fb-count">확인한 항목 0/2</span></h1>
+<p class="sub">기획서에서 뽑은 화면 목록이에요. 맞으면 "추천대로", 고칠 게 있으면 "다르게"를 눌러 주세요.</p>
+<div class="fb-warn" id="fb-warn" hidden>이 환경에서는 브라우저에만 저장돼요</div>
+
+<section data-unit="1">
+  <div class="strip">
+    <div class="ax"><b>1</b><span>화면 목록</span></div>
+    <button class="save go" data-accept="1">추천대로 할게요</button>
+    <button class="save go alt" data-alt="1">다르게 할래요</button>
+    <button class="save" data-save="1" hidden>저장</button>
+    <div class="saved" id="saved-1"></div>
+  </div>
+  <div>
+    <h2>어떤 화면들이 필요한가요 <small>기획서에서 뽑았어요</small></h2>
+    <div class="card">
+      <table id="screens">
+        <thead><tr><th>화면</th><th>무슨 화면인지</th><th>어떻게 들어가는지</th><th>가장 중요한 버튼</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="fixed" id="fixed" hidden></div>
+    </div>
+    <div class="fb" data-fb="1" hidden>
+      <div class="eyebrow">고칠 점</div>
+      <textarea data-text placeholder="빠진 화면이 있거나, 이름·역할이 다르면 여기에 적어 주세요"></textarea>
+    </div>
+  </div>
+</section>
+
+<section data-unit="2">
+  <div class="strip">
+    <div class="ax"><b>2</b><span>빈 칸 질문</span></div>
+    <button class="save go" data-accept="2">추천대로 할게요</button>
+    <button class="save go alt" data-alt="2">다르게 할래요</button>
+    <button class="save" data-save="2" hidden>저장</button>
+    <div class="saved" id="saved-2"></div>
+  </div>
+  <div>
+    <h2>기획서에 없어서 여쭤봐요 <small>추천이 미리 골라져 있어요</small></h2>
+    <div class="card" id="questions"></div>
+    <div class="fb" data-fb="2" hidden>
+      <div class="eyebrow">덧붙일 말</div>
+      <textarea data-text placeholder="선택지에 없는 답이 있으면 적어 주세요"></textarea>
+    </div>
+  </div>
+</section>
+
+<div class="overall">
+  <div class="strip">
+    <div class="ax"><b>∑</b><span>전체 의견</span></div>
+    <button class="save" data-save="overall">저장</button>
+    <div class="saved" id="saved-overall"></div>
+  </div>
+  <div class="fb" data-fb="overall">
+    <div class="eyebrow">전체 의견</div>
+    <textarea data-text placeholder="이 단계 전체에 대해 하고 싶은 말"></textarea>
+  </div>
+</div>
+
+<p class="foot">저장한 내용은 다음 단계에서 그대로 쓰여요. 언제든 다시 열어 고칠 수 있어요.</p>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== probe-renderer(KIND=structure)가 채우는 유일한 블록 =====
+SURVEY = {
+  screens: [ {id:"home", name:"홈", role:"모임 목록", entry:"앱 실행 시", cta:"새 모임 만들기"}, ... ],
+  fixed:   [ {label:"플랫폼", value:"iOS와 Android 둘 다", source:"PRD 2절"}, ... ],   // 묻지 않는 확정 항목
+  questions: [
+    { id:"entry", q:"앱을 열면 맨 처음 무엇이 보이나요?", why:"PRD에 로그인 언급이 없어요",
+      options:[ {value:"main", label:"바로 메인 화면"}, {value:"login", label:"로그인 먼저"}, {value:"onboarding", label:"온보딩 몇 장 먼저"} ] },
+    ...
+  ]   // options[0]이 추천. 최대 8개.
+};
+*/
+const SURVEY = {
+  screens: [
+    {id:"login", name:"로그인", role:"Google·GitHub OAuth 진입", entry:"첫 실행 시", cta:"Google로 계속"},
+    {id:"home", name:"홈(명령창)", role:"새 작업·AI 명령 입력", entry:"앱 실행 시(로그인 후)", cta:"명령 입력"},
+    {id:"chat", name:"회사별 채팅", role:"지원 건별 AI 대화 작업공간", entry:"사이드바 채팅", cta:"메시지 보내기"},
+    {id:"documents", name:"내 서류", role:"이력서·자소서·포폴 편집·출력", entry:"사이드바 기능 → 내 서류", cta:"문서 편집"},
+    {id:"applications", name:"지원 관리", role:"공고 수집·단계 추적", entry:"사이드바 기능", cta:"공고 추가"},
+    {id:"job-detail", name:"공고 상세", role:"요구사항·차이 분석·지원 준비", entry:"지원 관리 → 행", cta:"지원 준비 시작"},
+    {id:"career", name:"커리어 볼트", role:"근거 수집·관리", entry:"사이드바 기능", cta:"근거 추가"},
+    {id:"projects", name:"프로젝트", role:"역량 보완 블루프린트·CLI 실행", entry:"사이드바 프로젝트", cta:"프로젝트 시작"},
+    {id:"interviews", name:"면접", role:"예상 질문·STAR 답변·회고", entry:"사이드바 기능", cta:"면접 준비"},
+    {id:"calendar", name:"캘린더", role:"마감·면접 일정", entry:"사이드바 기능", cta:"일정 확인"},
+    {id:"offers", name:"오퍼", role:"오퍼 기록·비교", entry:"사이드바 기능", cta:"오퍼 비교"},
+    {id:"routines", name:"반복 작업", role:"제안된 후속 작업(마감·팔로업)", entry:"사이드바 기능", cta:"제안 실행"},
+    {id:"settings", name:"설정", role:"계정·AI 키·연동·외관", entry:"사이드바 하단", cta:"저장"}
+  ],
+  fixed: [
+    {label:"플랫폼", value:"macOS·Windows 데스크톱 (1440×900 기준)", source:"PRD §6"},
+    {label:"내비게이션", value:"좌측 사이드바(기능/채팅/프로젝트), 우측 패널 없음", source:"PRD §8"},
+    {label:"언어", value:"한국어 + 영어", source:"PRD §5"},
+    {label:"문서 기능명", value:"내 서류", source:"PRD §8"}
+  ],
+  questions: [
+    {id:"entry", q:"앱을 열면 맨 처음 무엇이 보이나요?", why:"PRD에 OAuth 로그인이 있어요. 데스크톱은 재방문이 많아요",
+     options:[{value:"login-once",label:"첫 실행만 로그인, 이후 홈 명령창"},{value:"always-main",label:"로그인 없이 바로 홈(계정은 설정에서)"},{value:"always-login",label:"매 실행 로그인"}]},
+    {id:"core", q:"가장 자주 반복하는 행동 하나는?", why:"홈 명령창과 사이드바 순서를 정하는 기준이에요",
+     options:[{value:"chat",label:"채팅으로 AI에게 작업 지시"},{value:"docs",label:"문서 편집·출력"},{value:"tracking",label:"지원 단계 업데이트"}]},
+    {id:"approvals", q:"지원 제출·CLI 실행 같은 승인 요청은 어디서 처리하나요?", why:"승인이 PRD 핵심 안전장치라 위치가 중요해요",
+     options:[{value:"inline",label:"일어난 화면 안 인라인 카드(채팅·문서 안)"},{value:"center",label:"전용 승인 목록 화면 하나"},{value:"both",label:"인라인 + 전용 목록 둘 다"}]},
+    {id:"window", q:"창을 작게 줄이면 어떻게 되나요?", why:"최소 창 크기와 사이드바 동작을 정해요",
+     options:[{value:"collapse",label:"최소 1024×640, 그보다 작으면 사이드바 접힘"},{value:"fixed",label:"최소 크기 고정, 더 못 줄임"},{value:"free",label:"제한 없이 자유(내용이 잘릴 수 있음)"}]},
+    {id:"data", q:"공고·문서는 얼마나 쌓이나요?", why:"목록에 검색·필터가 필요한지 정해요",
+     options:[{value:"hundreds",label:"수십~수백 개 — 검색·필터 필요"},{value:"dozens",label:"수십 개 — 스크롤로 충분"},{value:"few",label:"열 개 미만"}]}
+  ]
+};
+/* ===== 아래는 손대지 않는다 ===== */
+
+const $=(s,r=document)=>r.querySelector(s);
+const LS_KEY='structure-feedback';
+const UNITS={1:'화면 목록',2:'빈 칸 질문'};
+let db=null,dbReady=false;
+const FB={},DRAFT={};
+
+let toastT;
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2200);}
+function fmtAgo(iso){if(!iso)return'';const d=(Date.now()-new Date(iso).getTime())/1000;if(d<60)return'방금';if(d<3600)return Math.floor(d/60)+'분 전';if(d<86400)return Math.floor(d/3600)+'시간 전';return new Date(iso).toLocaleDateString('ko-KR');}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function recoAnswers(){const a={};SURVEY.questions.forEach(q=>{a[q.id]=q.options[0].value;});return a;}
+function updateCount(){const n=['1','2'].filter(k=>FB[k]).length;$('#fb-count').textContent=`확인한 항목 ${n}/2`;}
+
+/* ---------- 화면 목록 ---------- */
+(function buildScreens(){
+  const tb=$('#screens tbody');
+  tb.innerHTML=SURVEY.screens.map(s=>`<tr data-id="${esc(s.id)}"><td class="name">${esc(s.name)}</td><td>${esc(s.role)}</td><td>${esc(s.entry)}</td><td class="cta">${esc(s.cta)}</td><td class="rm"><label><input type="checkbox" class="rowchk" data-id="${esc(s.id)}" disabled> 빼도 돼요</label></td></tr>`).join('');
+  const fx=$('#fixed');
+  if(SURVEY.fixed&&SURVEY.fixed.length){fx.hidden=false;fx.innerHTML='<b>이미 정해진 것</b> '+SURVEY.fixed.map(f=>`<span>${esc(f.label)}: <b>${esc(f.value)}</b> <small>(${esc(f.source)})</small></span>`).join('');}
+})();
+/* ---------- 질문 ---------- */
+(function buildQuestions(){
+  const box=$('#questions');
+  if(!SURVEY.questions.length){box.innerHTML='<p class="why">기획서만으로 전부 정해졌어요. 물어볼 게 없습니다.</p>';return;}
+  box.innerHTML=SURVEY.questions.map(q=>`<div class="q" data-q="${esc(q.id)}" data-locked><div class="qt">${esc(q.q)}</div><p class="why"><b>추천</b> ${esc(q.why)}</p><div class="opts">${q.options.map((o,i)=>`<button class="opt${i===0?' reco':''}" data-val="${esc(o.value)}">${esc(o.label)}</button>`).join('')}</div></div>`).join('');
+})();
+
+function draft(id){
+  if(!DRAFT[id]){
+    const s=FB[id];
+    if(id==='1')DRAFT[id]={marks:s?[...(s.marks||[])]:[],text:s?(s.text==='추천대로'?'':s.text||''):''};
+    else if(id==='2')DRAFT[id]={answers:s&&s.answers?{...s.answers}:recoAnswers(),text:s?(s.text==='추천대로'?'':s.text||''):''};
+    else DRAFT[id]={text:s?s.text||'':''};
+  }
+  return DRAFT[id];
+}
+function render(id){
+  const d=draft(id),s=FB[id],panel=$(`.fb[data-fb="${id}"]`);
+  if(id==='1'){
+    document.querySelectorAll('#screens tbody tr').forEach(tr=>{const on=d.marks.includes(tr.dataset.id);tr.classList.toggle('off',on);$('.rowchk',tr).checked=on;});
+  }
+  if(id==='2'){
+    document.querySelectorAll('.q').forEach(q=>{const v=d.answers[q.dataset.q];q.querySelectorAll('.opt').forEach(b=>b.classList.toggle('on',b.dataset.val===v));});
+  }
+  const ta=$('[data-text]',panel);if(document.activeElement!==ta)ta.value=d.text;
+  $(`#saved-${id}`).textContent=s?`저장됨 ✓ ${s.text==='추천대로'?'추천대로':''} ${fmtAgo(s.updatedAt)}`:'';
+  if(id!=='overall'){
+    const acc=$(`[data-accept="${id}"]`);
+    acc.textContent=s&&s.text==='추천대로'?'추천대로 ✓':'추천대로 할게요';
+    if(s&&s.text!=='추천대로'&&!panel.dataset.opened)openAlt(id);
+  }
+}
+function setLocked(id,locked){
+  if(id==='1')document.querySelectorAll('.rowchk').forEach(c=>c.disabled=locked);
+  if(id==='2')document.querySelectorAll('.q').forEach(q=>{locked?q.setAttribute('data-locked',''):q.removeAttribute('data-locked');});
+}
+function openAlt(id){
+  const panel=$(`.fb[data-fb="${id}"]`);
+  panel.hidden=false;panel.dataset.opened='1';
+  $(`[data-alt="${id}"]`).classList.add('on');
+  $(`[data-save="${id}"]`).hidden=false;
+  setLocked(id,false);
+}
+function closeAlt(id){
+  const panel=$(`.fb[data-fb="${id}"]`);
+  panel.hidden=true;delete panel.dataset.opened;
+  $(`[data-alt="${id}"]`).classList.remove('on');
+  $(`[data-save="${id}"]`).hidden=true;
+  setLocked(id,true);
+}
+function renderAll(){['1','2','overall'].forEach(render);}
+
+document.querySelectorAll('.rowchk').forEach(c=>c.addEventListener('change',()=>{const d=draft('1'),i=d.marks.indexOf(c.dataset.id);c.checked?(i<0&&d.marks.push(c.dataset.id)):(i>=0&&d.marks.splice(i,1));render('1');}));
+$('#questions').addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;const q=b.closest('.q');if(q.hasAttribute('data-locked'))return;draft('2').answers[q.dataset.q]=b.dataset.val;render('2');});
+document.querySelectorAll('.fb').forEach(panel=>{$('[data-text]',panel).addEventListener('input',e=>{draft(panel.dataset.fb).text=e.target.value;});});
+
+async function persist(path,doc){
+  if(dbReady&&db){await db.doc(path).set(doc);}
+  else{let all={};try{all=JSON.parse(localStorage.getItem(LS_KEY)||'{}');}catch(_){}all[path]=doc;try{localStorage.setItem(LS_KEY,JSON.stringify(all));}catch(_){throw{code:'unavailable',message:'localStorage 실패'};}}
+}
+function nameOf(id){const s=SURVEY.screens.find(x=>x.id===id);return s?s.name:id;}
+function buildDoc(id,accept){
+  const now=new Date().toISOString();
+  if(id==='overall')return{unit:'overall',n:0,label:'전체',best:null,worst:null,marks:[],markNames:[],text:draft(id).text.trim(),updatedAt:now};
+  if(accept){
+    if(id==='1')return{unit:'structure',n:1,label:UNITS[1],best:null,worst:null,marks:[],markNames:[],text:'추천대로',updatedAt:now};
+    return{unit:'structure',n:2,label:UNITS[2],answers:recoAnswers(),best:null,worst:null,marks:[],markNames:[],text:'추천대로',updatedAt:now};
+  }
+  const d=draft(id);
+  if(id==='1')return{unit:'structure',n:1,label:UNITS[1],best:null,worst:null,marks:[...d.marks],markNames:d.marks.map(nameOf),text:d.text.trim(),updatedAt:now};
+  return{unit:'structure',n:2,label:UNITS[2],answers:{...d.answers},best:null,worst:null,marks:[],markNames:[],text:d.text.trim(),updatedAt:now};
+}
+function errMsg(e){const c=e&&e.code;if(c==='not_granted')return'저장 권한이 없어요 — 페이지를 다시 열어 주세요';if(c==='revoked')return'접근이 끊겼어요 — 페이지를 다시 열어 주세요';if(c==='quota_exceeded')return'저장 공간이 가득 찼어요';if(c==='resource_exhausted')return'잠시 뒤 다시 눌러 주세요';if(c==='invalid_argument')return'저장 내용에 문제가 있어요';return'저장 실패, 다시 눌러 주세요';}
+const pathOf=id=>id==='overall'?'feedback/structure-overall':`feedback/structure-${id}`;
+
+document.querySelectorAll('[data-save]').forEach(btn=>btn.addEventListener('click',async()=>{
+  const id=btn.dataset.save,doc=buildDoc(id,false);
+  btn.disabled=true;btn.textContent='저장 중…';
+  try{await persist(pathOf(id),doc);FB[id]=doc;delete DRAFT[id];updateCount();render(id);toast('저장됨 ✓');}
+  catch(e){console.warn('feedback save failed',e&&e.code,e);toast(errMsg(e));}
+  finally{btn.disabled=false;btn.textContent='저장';}
+}));
+document.querySelectorAll('[data-alt]').forEach(btn=>btn.addEventListener('click',()=>{
+  const id=btn.dataset.alt,panel=$(`.fb[data-fb="${id}"]`);
+  if(panel.hidden){openAlt(id);panel.scrollIntoView({behavior:'smooth',block:'nearest'});}else closeAlt(id);
+}));
+document.querySelectorAll('[data-accept]').forEach(btn=>btn.addEventListener('click',async()=>{
+  const id=btn.dataset.accept,doc=buildDoc(id,true);
+  btn.disabled=true;btn.textContent='저장 중…';
+  try{await persist(pathOf(id),doc);FB[id]=doc;delete DRAFT[id];closeAlt(id);updateCount();render(id);toast('저장됨 ✓ 추천대로');}
+  catch(e){console.warn('accept save failed',e&&e.code,e);toast(errMsg(e));btn.textContent='추천대로 할게요';}
+  finally{btn.disabled=false;}
+}));
+function applyLoaded(pairs){
+  pairs.forEach(([docId,data])=>{if(!data)return;if(docId==='structure-overall')FB.overall=data;else{const m=/^structure-(\d)$/.exec(docId);if(m&&UNITS[m[1]])FB[m[1]]=data;}});
+  updateCount();renderAll();
+}
+async function initFeedback(){
+  try{db=window.claude&&typeof window.claude.use==='function'?await window.claude.use('db'):null;}catch(e){db=null;}
+  if(db){dbReady=true;try{const snap=await db.collection('feedback').get();applyLoaded(snap.docs.map(d=>[d.id,d.data()]));}catch(e){console.warn('feedback load failed',e&&e.code,e);toast('저장된 의견을 불러오지 못했어요');}}
+  else{$('#fb-warn').hidden=false;let all={};try{all=JSON.parse(localStorage.getItem(LS_KEY)||'{}');}catch(_){}applyLoaded(Object.entries(all).map(([p,d])=>[p.replace(/^feedback\//,''),d]));}
+}
+renderAll();
+initFeedback();
+</script>

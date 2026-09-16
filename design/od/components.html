@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Push — Components</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+body { margin: 0; padding: 48px; }
+section { margin-bottom: 48px; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<h1 class="t-h1">Push Components</h1>
+<p class="t-body" style="color:var(--color-text-muted)">design-rules.md §B · 데스크톱</p>
+
+<section><h2 class="t-h2">Button</h2>
+<div class="row">
+<button class="button button-primary button-sm">작은 버튼</button>
+<button class="button button-primary button-md">기본 버튼</button>
+<button class="button button-primary button-lg">큰 버튼</button>
+<button class="button button-secondary button-md">보조</button>
+<button class="button button-ghost button-md">고스트</button>
+<button class="button button-danger button-md">삭제</button>
+<button class="button button-primary button-md" disabled>비활성</button>
+<button class="button button-primary button-md is-loading">처리 중</button>
+<button class="button button-md is-selected">선택됨</button>
+</div></section>
+
+<section><h2 class="t-h2">Input / CommandInput / Composer</h2>
+<div class="row" style="flex-direction:column;align-items:stretch;max-width:720px;gap:16px">
+<input class="input" placeholder="이름">
+<div class="command-input"><input class="command-input-field" placeholder="무엇을 할까요?"><button class="button button-primary button-md">실행</button></div>
+<div class="composer"><input class="composer-field" placeholder="메시지 입력"><button class="button button-primary button-md">보내기</button></div>
+</div></section>
+
+<section><h2 class="t-h2">StatusChip</h2>
+<div class="row">
+<span class="status-chip status-chip-ready">READY</span>
+<span class="status-chip status-chip-running">RUNNING</span>
+<span class="status-chip status-chip-verified">VERIFIED</span>
+<span class="status-chip status-chip-pending">PENDING</span>
+<span class="status-chip status-chip-error">ERROR</span>
+</div></section>
+
+<section><h2 class="t-h2">Card / DocCard</h2>
+<div class="card-grid" style="max-width:720px">
+<div class="card"><div class="card-title">삼성전자 백엔드 지원</div><div class="card-meta">2시간 전 · READY</div></div>
+<div class="doc-card"><div class="doc-card-title">이력서_2026</div><div class="doc-card-meta">이력서 · 어제</div></div>
+<div class="card"><div class="card-title">네이버 프론트엔드</div><div class="card-meta">어제</div></div>
+</div></section>
+
+<section><h2 class="t-h2">ApprovalCard</h2>
+<div class="approval-card" style="max-width:560px">
+<div class="approval-card-title">CLI 실행 승인</div>
+<div class="approval-card-cmd">$ npm run test -- --coverage
+디렉터리: ~/projects/kafka-pipeline</div>
+<div class="approval-card-body">프로젝트 검증을 위해 테스트를 실행합니다.</div>
+<div class="approval-card-actions">
+<button class="button button-secondary button-sm">거부</button>
+<button class="button button-primary button-sm">승인</button>
+</div></div></section>
+
+<section><h2 class="t-h2">Empty / Error / Skeleton / Toast</h2>
+<div class="row" style="align-items:flex-start">
+<div class="empty-state" style="border:1px dashed var(--color-border);width:320px"><div class="empty-state-icon">[icon]</div><div>아직 지원 내역이 없어요</div><button class="button button-primary button-sm">공고 추가</button></div>
+<div class="error-state" style="border:1px dashed var(--color-border);width:320px"><div>불러오기 실패</div><button class="button button-secondary button-sm">다시 시도</button></div>
+<div style="width:200px;display:flex;flex-direction:column;gap:8px"><div class="skeleton" style="height:64px"></div><div class="skeleton"></div><div class="skeleton" style="width:60%"></div></div>
+</div></section>
+</body>
+</html>
