@@ -5,7 +5,7 @@
 | 경로 | 역할 |
 | --- | --- |
 | [push-fe](push-fe) | Tauri v2 · React · ky · Zustand · FSD · TipTap · SQLite |
-| [push-be](push-be) | Go · Echo · PostgreSQL API |
+| [push-be](push-be) | FastAPI · LangGraph · PostgreSQL API |
 | [docs/plan.md](docs/plan.md) | 제품 계획 및 확정 UI 결정 |
 | [docs/api.md](docs/api.md) | 요청·응답·상태·승인·오류 계약 |
 | [docs/delivery-status.md](docs/delivery-status.md) | 구현과 실제 검증 상태 |
@@ -17,13 +17,14 @@
 git clone https://github.com/push-dot/push-workspace.git
 cd push-workspace
 git switch develop
+git submodule update --init --recursive
 ```
 
-저장소는 비공개다. 앱과 API 코드는 `push-fe`, `push-be`에 모노레포로 함께 들어 있다.
+저장소는 비공개다. 앱과 API 코드는 `push-fe`, `push-be` 서브모듈에 들어 있다.
 
 ## 개발
 
-Node.js 22+, Go, PostgreSQL, Rust stable, macOS Xcode를 준비한다. 구체적인 실행과 테스트 명령은 `push-be/README.md`에 있다. API 기본 포트는 8080이다. 서버 개발 인증은 `APP_ENV=development`와 직접 설정한 `DEV_AUTH_TOKEN`으로만 활성화된다.
+Node.js 22+, Python 3.12+, PostgreSQL, Rust stable, macOS Xcode를 준비한다. 구체적인 실행과 테스트 명령은 `push-be/README.md`에 있다. API 기본 포트는 8080이다. 서버 개발 인증은 `APP_ENV=development`와 직접 설정한 `DEV_AUTH_TOKEN`으로만 활성화된다.
 
 프런트엔드는 확정된 [v6 프로토타입](docs/no-right-sidebar-prototype-v6.png)을 따른다. 왼쪽은 기능·채팅·프로젝트, 문서 기능명은 `내 서류`이며 오른쪽 컨텍스트 패널은 없다.
 

@@ -6,9 +6,10 @@
 git clone https://github.com/push-dot/push-workspace.git
 cd push-workspace
 git switch develop
+git submodule update --init --recursive
 ```
 
-저장소는 비공개다. 앱과 API 코드는 `push-fe`, `push-be`에 모노레포로 함께 들어 있다.
+저장소는 비공개다. 앱과 API 코드는 `push-fe`, `push-be` 서브모듈에 들어 있다.
 
 ## Hostinger VPS
 
