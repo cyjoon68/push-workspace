@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | API 계약 | 작성 완료 | 원본 workspace `docs/api.md`에 먼저 작성, 구현과 함께 동기화 |
 | 저장소 분리 | 완료 | 비공개 `push-dot/push-fe`, `push-dot/push-be`; 각각 develop에 squash 병합하고 검증한 동일 트리를 서브모듈로 고정 |
-| 1. 독립 도메인 신규 구현 | 로컬 검증 통과 | Go·Echo·실제 PostgreSQL, 기존 코드 참조 없이 구현 |
+| 1. 독립 도메인 신규 구현 | 로컬 검증 통과 | Python·FastAPI·LangGraph·실제 PostgreSQL, Go 구현에서 전면 재작성 |
 | 2. 데스크톱 셸 | 로컬 검증 통과 | React·ky·Zustand·FSD; Tauri 실행·단일 인스턴스·창 제어; v6 시각 비교 |
 | 3. 근거·문서·출력 | 로컬 검증 통과 | 근거→분석→버전 확정, 한글 PDF 래스터·DOCX 렌더·링크; 편집/동기화 경합 회귀 검사 |
 | 4. 지원 생명주기 | 로컬 검증 통과 | 승인·면접·일정·오퍼·루틴·회사 출처·불합격 기록 실제 API 및 UI 검증 |

@@ -1,19 +1,19 @@
 .PHONY: api web desktop test smoke
 
 api:
-	cd push-be && go run .
+	cd push-be && uvicorn app.main:app --host 0.0.0.0 --port 8080
 
 web:
 	npm --prefix push-fe run dev
 
 desktop:
-	cd push-fe && npm run tauri dev
+	cd push-fe && cargo tauri dev
 
 test:
-	@test -n "$$TEST_DATABASE_URL" || (echo 'Set TEST_DATABASE_URL to a dedicated PostgreSQL test database' && exit 1)
-	cd push-be && go test -race -count=1 ./...
+	cd push-be && python -m pytest
 	npm --prefix push-fe test
-	npm --prefix push-fe run check:fsd
+	npm --prefix push-fe run lint
+	npm --prefix push-fe run typecheck
 	npm --prefix push-fe run build
 
 smoke:

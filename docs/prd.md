@@ -39,7 +39,7 @@ Push는 근거 수집부터 문서 작성, 지원, 면접, 오퍼까지 구직 �
 | --- | --- |
 | 데스크톱 | Tauri v2, React 19, TypeScript, Vite, TipTap, SQLite |
 | 프런트엔드 구조 | FSD v2.1, ky, Zustand |
-| 서버 | Go, Echo, PostgreSQL, Caddy, Docker Compose, Hostinger VPS |
+| 서버 | Python, FastAPI, LangGraph, PostgreSQL, Caddy, Docker Compose, Hostinger VPS |
 | 인증 | Google·GitHub OAuth + Tauri 딥링크 복귀 |
 | AI | 관리형 OpenAI + BYOK (OpenAI·Claude·Gemini·Grok), BYOK 키는 AES-GCM 암호화 |
 | 결제 | Stripe 월 구독 + 원가 크레딧 |

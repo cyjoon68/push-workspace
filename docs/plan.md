@@ -54,7 +54,7 @@
 ## 3. 기술 구조와 인터페이스
 
 - 데스크톱: Tauri v2, React, TypeScript, Vite, TipTap, SQLite.
-- 서버: Go + Echo, PostgreSQL, Caddy, Docker Compose, Hostinger VPS.
+- 서버: Python + FastAPI + LangGraph, PostgreSQL, Caddy, Docker Compose, Hostinger VPS.
 - 인증: Google·GitHub OAuth와 Tauri 딥링크 복귀.
 - AI:
   - Push 관리형 OpenAI와 BYOK OpenAI·Claude·Gemini·Grok을 지원한다.
