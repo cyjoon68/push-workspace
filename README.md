@@ -4,8 +4,9 @@
 
 | 경로 | 역할 |
 | --- | --- |
-| [push-fe](push-fe) | Tauri v2 · React · ky · Zustand · FSD · TipTap · SQLite |
+| [push-fe](push-fe) | Tauri v2 · React · ky · TanStack Query · Zustand · vanilla-extract · TipTap |
 | [push-be](push-be) | FastAPI · LangGraph · PostgreSQL API |
+| [push-langdig](https://github.com/push-dot/push-langdig) | 랜딩 페이지 (Cloudflare Pages, `main` 자동 배포) |
 | [docs/plan.md](docs/plan.md) | 제품 계획 및 확정 UI 결정 |
 | [docs/api.md](docs/api.md) | 요청·응답·상태·승인·오류 계약 |
 | [docs/delivery-status.md](docs/delivery-status.md) | 구현과 실제 검증 상태 |
