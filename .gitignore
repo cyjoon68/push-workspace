@@ -1,0 +1,11 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+.worktrees/
+.artifacts/
+output/
+.playwright-cli/
+push-be/server
+
+design/

@@ -1,0 +1,22 @@
+name: Repository policy
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+    branches: [develop]
+permissions:
+  contents: read
+jobs:
+  policy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { head, title } = context.payload.pull_request;
+            const categories = '(feat|fix|refactor|chore|docs|test)';
+            if (!new RegExp(`^${categories}/[a-z0-9]+(?:-[a-z0-9]+)*$`).test(head.ref)) {
+              core.setFailed('Use a category/short-kebab-summary branch.');
+            }
+            if (!new RegExp(`^${categories}\\([a-z0-9-]+\\): [a-z].{0,70}$`).test(title) || title.length > 72) {
+              core.setFailed('Use a scoped Conventional Commit PR title under 73 characters.');
+            }

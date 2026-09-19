@@ -1,0 +1,8 @@
+[submodule "push-be"]
+	path = push-be
+	url = https://github.com/push-dot/push-be
+	branch = develop
+[submodule "push-fe"]
+	path = push-fe
+	url = https://github.com/push-dot/push-fe
+	branch = develop
