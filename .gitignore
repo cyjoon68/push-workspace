@@ -7,3 +7,5 @@
 output/
 .playwright-cli/
 push-be/server
+
+design/
