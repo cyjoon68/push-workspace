@@ -9,3 +9,5 @@ output/
 push-be/server
 
 design/
+.omo/
+_workspace/
