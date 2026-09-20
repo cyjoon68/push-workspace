@@ -60,7 +60,6 @@ push-fe (Tauri v2 + React)          push-be (FastAPI + LangGraph)
 
 | 경로 | 역할 |
 | --- | --- |
-| [push-fe](https://github.com/push-dot/push-fe) | Tauri v2 · React · ky · TanStack Query · Zustand · vanilla-extract · TipTap |
+| [push-fe](https://github.com/push-dot/push-fe) | Tauri v2 · React · ky · TanStack Query · Zustand · vanilla-extract · TipTap — `@push/design-system` 패키지 + Storybook 내장 |
 | [push-be](https://github.com/push-dot/push-be) | FastAPI · LangGraph · PostgreSQL API |
-| [push-design](https://github.com/push-dot/push-design) | 디자인 시스템 — vanilla-extract 토큰·레시피·프리미티브 |
 | [push-langdig](https://github.com/push-dot/push-langdig) | 랜딩 페이지 (Cloudflare Pages) |
