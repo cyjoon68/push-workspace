@@ -55,8 +55,12 @@
 | 문서 편집기 · PDF/DOCX보내기 | 커리어 볼트 |
 | ![지원 관리](docs/screenshots/10-applications.png) | ![설정](docs/screenshots/11-settings-page.png) |
 | 지원 관리 | 설정 |
-| ![면접](docs/screenshots/12-interview.png) | |
-| 면접 준비 | |
+| ![면접](docs/screenshots/12-interview.png) | ![Google 연결](docs/screenshots/13-calendar-connect.png) |
+| 면접 준비 | 캘린더 · Google 연결 |
+| ![Google 동의](docs/screenshots/13b-google-consent.png) | ![동기화](docs/screenshots/14-calendar-sync.png) |
+| Google OAuth 동의 화면 | 캘린더 동기화 |
+| ![캘린더 이벤트](docs/screenshots/15-calendar-events.png) | |
+| 동기화된 일정 목록 | |
 
 ## 아키텍처
 
