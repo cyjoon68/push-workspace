@@ -9,3 +9,4 @@
 [submodule "push-design"]
 	path = push-design
 	url = https://github.com/push-dot/push-design.git
+	branch = develop
