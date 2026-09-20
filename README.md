@@ -33,34 +33,16 @@
 
 ## 스크린샷
 
-가상 인물(김도연) 이력서로 실제 웹 UI에서 이력서 생성 전체 흐름을 돌린 화면.
+가상 인물(김도연) 이력서로 실제 웹 UI에서 이력서 생성 전체 흐름을 돌린 화면. 나머지 화면은 [docs/screenshots](docs/screenshots/)에 있다.
 
 | | |
 | --- | --- |
-| ![홈 컴포저](docs/screenshots/02-composer.png) | ![추론 설정](docs/screenshots/01-settings.png) |
-| 홈 컴포저 · 공고 URL + 이력서 첨부 | 추론 설정 · OpenCode Go DeepSeek v4.1 Flash |
-| ![스트리밍](docs/screenshots/03-streaming.png) | ![입력 게이트](docs/screenshots/04-gate-1-inputs.png) |
-| 응답 스트리밍 | Phase 0 · 산출물 선택 게이트 |
-| ![적합도 게이트](docs/screenshots/04-gate-2-fit-score.png) | ![전략 게이트](docs/screenshots/04-gate-3-strategy.png) |
-| Phase 2 · Fit score 게이트 | Phase 3 · 전략 게이트 |
-| ![초안 피드백 게이트](docs/screenshots/04-gate-4-draft-feedback.png) | ![템플릿 게이트](docs/screenshots/04-gate-5-template.png) |
-| Phase 4 · 초안 피드백 게이트 | Phase 5 · 템플릿 선택 게이트 |
-| ![PDF 게이트](docs/screenshots/04-gate-6-pdf.png) | ![최종 게이트](docs/screenshots/04-gate-7-final.png) |
-| Phase 6 · PDF 생성 게이트 | Phase 6 · 완료 게이트 |
-| ![이탈 후 복귀](docs/screenshots/05-nav-back.png) | ![최종 화면](docs/screenshots/06-final.png) |
-| 페이지 이탈 후 복귀 · 스트림 자동 재연결 | 최종 응답 · 문서보내기 칩 |
-| ![완료](docs/screenshots/06b-final-completion.png) | ![내 서류](docs/screenshots/07-documents.png) |
-| 워크플로 완료 | 내 서류 목록 |
-| ![문서 편집기](docs/screenshots/08-doc-editor.png) | ![커리어 볼트](docs/screenshots/09-vault.png) |
-| 문서 편집기 · PDF/DOCX보내기 | 커리어 볼트 |
-| ![지원 관리](docs/screenshots/10-applications.png) | ![설정](docs/screenshots/11-settings-page.png) |
-| 지원 관리 | 설정 |
-| ![면접](docs/screenshots/12-interview.png) | ![Google 연결](docs/screenshots/13-calendar-connect.png) |
-| 면접 준비 | 캘린더 · Google 연결 |
-| ![Google 동의](docs/screenshots/13b-google-consent.png) | ![동기화](docs/screenshots/14-calendar-sync.png) |
-| Google OAuth 동의 화면 | 캘린더 동기화 |
-| ![캘린더 이벤트](docs/screenshots/15-calendar-events.png) | |
-| 동기화된 일정 목록 | |
+| ![홈 컴포저](docs/screenshots/02-composer.png) | ![Fit score 게이트](docs/screenshots/04-gate-2-fit-score.png) |
+| 홈 컴포저 · 공고 URL + 이력서 첨부 | Phase 게이트 · Fit score 확인 후 진행 |
+| ![이탈 후 복귀](docs/screenshots/05-nav-back.png) | ![문서 편집기](docs/screenshots/08-doc-editor.png) |
+| 페이지 이탈 후 복귀 · 스트림 자동 재연결 | 문서 편집기 · PDF/DOCX보내기 |
+| ![지원 관리](docs/screenshots/10-applications.png) | ![캘린더](docs/screenshots/15-calendar-events.png) |
+| 지원 관리 · 공고 URL로 자동 생성 | 캘린더 · Google 동기화 |
 
 ## 아키텍처
 
