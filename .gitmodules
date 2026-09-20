@@ -6,3 +6,6 @@
 	path = push-fe
 	url = https://github.com/push-dot/push-fe
 	branch = develop
+[submodule "push-design"]
+	path = push-design
+	url = https://github.com/push-dot/push-design.git
