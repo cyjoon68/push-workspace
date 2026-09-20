@@ -38,6 +38,33 @@ docker compose up --build -d
 
 외부 OAuth·결제·Google·AI·서명·베타 설정은 실제 계정 준비 후 검증한다. 아직 검증하지 않은 기능을 출시 완료로 간주하지 않는다.
 
+## 스크린샷
+
+가상 인물(김도연) 이력서로 실제 웹 UI에서 이력서 생성 전체 흐름을 돌린 화면.
+
+| | |
+| --- | --- |
+| ![홈 컴포저](docs/screenshots/02-composer.png) | ![추론 설정](docs/screenshots/01-settings.png) |
+| 홈 컴포저 · 공고 URL + 이력서 첨부 | 추론 설정 · OpenCode Go DeepSeek v4.1 Flash |
+| ![스트리밍](docs/screenshots/03-streaming.png) | ![입력 게이트](docs/screenshots/04-gate-1-inputs.png) |
+| 응답 스트리밍 | Phase 0 · 산출물 선택 게이트 |
+| ![적합도 게이트](docs/screenshots/04-gate-2-fit-score.png) | ![전략 게이트](docs/screenshots/04-gate-3-strategy.png) |
+| Phase 2 · Fit score 게이트 | Phase 3 · 전략 게이트 |
+| ![초안 피드백 게이트](docs/screenshots/04-gate-4-draft-feedback.png) | ![템플릿 게이트](docs/screenshots/04-gate-5-template.png) |
+| Phase 4 · 초안 피드백 게이트 | Phase 5 · 템플릿 선택 게이트 |
+| ![PDF 게이트](docs/screenshots/04-gate-6-pdf.png) | ![최종 게이트](docs/screenshots/04-gate-7-final.png) |
+| Phase 6 · PDF 생성 게이트 | Phase 6 · 완료 게이트 |
+| ![이탈 후 복귀](docs/screenshots/05-nav-back.png) | ![최종 화면](docs/screenshots/06-final.png) |
+| 페이지 이탈 후 복귀 · 스트림 자동 재연결 | 최종 응답 · 문서보내기 칩 |
+| ![완료](docs/screenshots/06b-final-completion.png) | ![내 서류](docs/screenshots/07-documents.png) |
+| 워크플로 완료 | 내 서류 목록 |
+| ![문서 편집기](docs/screenshots/08-doc-editor.png) | ![커리어 볼트](docs/screenshots/09-vault.png) |
+| 문서 편집기 · PDF/DOCX보내기 | 커리어 볼트 |
+| ![지원 관리](docs/screenshots/10-applications.png) | ![설정](docs/screenshots/11-settings-page.png) |
+| 지원 관리 | 설정 |
+| ![면접](docs/screenshots/12-interview.png) | |
+| 면접 준비 | |
+
 ## Git 작업 규칙
 
 `develop`에서 `feat|fix|refactor|chore|docs|test/<short-kebab-summary>` 브랜치를 만들고 작업 단위로 scoped Conventional Commit을 남긴다. PR은 `develop`을 대상으로 하며 검사 통과 후 squash merge한다.
